@@ -37,9 +37,19 @@ A high-performance, accessible, and framework-agnostic Web Component designed fo
 **Properties** 
 | Property | Type | Default | Description
 | -------- | -------- | -------- | -------- |
-| `data` | `SearchResult[]` | `[]` | Array of searchable banking entities
-| `placeholder` | `string` | `'Search...'` | Custom text for input field
+| `data` | `SearchResult[]` | `[]` | A flexible collection of searchable entities (Accounts, Transactions, Customers, etc.)
+| `placeholder` | `string` | `'Search...'` | Customisable placeholder text for input field
 | `theme` | `'light' \| 'dark'` | `'light'` | Controls the theme (light/dark mode)
+  
+**SearchResult Data Schema**  
+For consistency, all data passed to this data property must follow this schema:
+| Field | Type | Required | Description
+| -------- | -------- | -------- | -------- |
+| `id` | `number` | Yes | Unique identifier for the entity
+| `title` | `string` | Yes | Primary display text (i.e. Account Number, Customer Name, etc.)
+| `category` | `string` | Yes | For visual grouping and result filtering
+| `description` | `string` | No | Secondary details (i.e. Account Type, Customer NRIC, etc.)
+| `metadata` | `Record<String, any>` | No | Additional custom data (i.e. URL, file, etc.)
   
 **Events** 
 | Event Name | Detail | Description
