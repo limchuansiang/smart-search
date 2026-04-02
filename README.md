@@ -45,7 +45,7 @@ A high-performance, accessible, and framework-agnostic Web Component designed fo
 For consistency, all data passed to this data property must follow this schema:
 | Field | Type | Required | Description
 | -------- | -------- | -------- | -------- |
-| `id` | `number` | Yes | Unique identifier for the entity
+| `id` | `string` | Yes | Unique identifier for the entity
 | `title` | `string` | Yes | Primary display text (i.e. Account Number, Customer Name, etc.)
 | `category` | `string` | Yes | For visual grouping and result filtering
 | `description` | `string` | No | Secondary details (i.e. Account Type, Customer NRIC, etc.)
