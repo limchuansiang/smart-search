@@ -83,6 +83,6 @@ The test suite is located in /tests and covers:
 - **Rendering:** Verifying the initial DOM structure.
 - **Interaction:** Full validation of ArrowUp, ArrowDown, Home, End, and Escape keys.
 - **Communication:** Verifying that the item-selected event carries the full metadata payload to the host app.
-- **Assessbility:** Automated WCAG 2.2 audit via Axe-core.
+- **Accessibility:** Automated WCAG 2.2 audit via Axe-core.
 - **Edge Cases:** Handling "No Results Found" and rapid typing (input handling).
 - **Theming:** Checking CSS variable updates when the theme attribute is toggled.
