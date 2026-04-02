@@ -1,0 +1,41 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Search Demo</title>
+</head>
+<body>
+    <button id="themeToggle">Switch to Dark Mode</button>
+    <h1>Smart Search Demo</h1>
+
+    <smart-search id="mySearch" class="dark-mode" placeholder="Search accounts, transactions, customers..."></smart-search>
+
+    <script type="module">
+        import './src/components/smart-search.ts';
+
+        const searchEl = document.getElementById('mySearch');
+        const toggleBtn = document.getElementById('themeToggle');
+
+        toggleBtn.addEventListener('click', () => {
+            const isDarkMode = searchEl.getAttribute('theme') === 'dark';
+            searchEl.setAttribute('theme', isDarkMode ? 'light' : 'dark');
+            toggleBtn.innerText = isDarkMode ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+        });
+
+        // Sample data
+        searchEl.data = [
+            { id: 1, title: 'Savings Plus 123456', category: 'Account' },
+            { id: 2, title: 'Trading USD 555123', category: 'Account' },
+            { id: 3, title: 'Incoming Transfer - $10', category: 'Transaction', description: 'From account 123456 to 999888' },
+            { id: 4, title: 'Outgoing Transfer - $50', category: 'Transaction', description: 'From account 232323 to 123456' },
+            { id: 5, title: 'Jayaraj KAMARAJ', category: 'Customer', description: 'VIP Customer' },
+            { id: 6, title: 'WONG Meng Xian', category: 'Customer', description: 'Tier 1 Customer Customer Customer Customer Customer Customer Customer Customer Customer Customer Customer Customer Customer Customer Customer Customer Customer' },
+            { id: 7, title: 'Annual Report 2025 Julius Baer', category: 'Documents', description: 'PDF - 4MB', metadata: { fileType: 'URL', link: 'https://www.juliusbaer.com/index.php?eID=dumpFile&t=f&f=107287&token=524fb1640b12ee2313be6d55cdd0c488e6220c15' } }
+        ];
+
+        searchEl.addEventListener('item-selected', (e) => {
+            alert(`You have selected ${e.detail.category} - ${e.detail.title}`);
+        });
+    </script>
+</body>
+</html>
+ 
